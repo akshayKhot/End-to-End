@@ -34,4 +34,8 @@ export class PageObject_Welcome {
       );
     });
   }
+
+  getValidateButton() {
+      return element(by.css('#validate')).getText();
+  }
 }

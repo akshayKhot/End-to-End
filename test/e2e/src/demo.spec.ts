@@ -39,4 +39,10 @@ describe('aurelia skeleton app', function() {
     po_skeleton.navigateTo('#/users');
     expect(po_skeleton.getCurrentPageTitle()).toBe('Github Users | Aurelia');
   });
+
+  it('should have a validate button', () => {
+      var validateBtnText = po_welcome.getValidateButton();
+      console.log("text on the button is: " + validateBtnText);
+      expect(validateBtnText).toBe('Validate');
+  })
 });
