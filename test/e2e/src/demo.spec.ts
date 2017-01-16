@@ -42,7 +42,24 @@ describe('aurelia skeleton app', function() {
 
   it('should have a validate button', () => {
       var validateBtnText = po_welcome.getValidateButton();
-      console.log("text on the button is: " + validateBtnText);
       expect(validateBtnText).toBe('Validate');
-  })
+  });
+
+  it('should input two numbers and add them', () => {
+      po_skeleton.navigateTo('#/calculatorRoute');
+      
+      expect(browser.getTitle()).toBe('CalculatorTitle | Aurelia');
+
+      let numOneElement = element(by.valueBind('num1'));
+      let numTwoElement = element(by.valueBind('num2'));
+      
+      numOneElement.clear().then(() => numOneElement.sendKeys("50"));
+      numTwoElement.clear().then(() => numTwoElement.sendKeys("75"));
+
+       let addBtnElement = element(by.id('addBtn'));
+       addBtnElement.click();
+
+       element(by.id('sum')).getText()
+            .then((sum) => expect(parseInt(sum)).toBe(125));
+  });
 });

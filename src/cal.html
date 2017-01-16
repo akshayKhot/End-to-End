@@ -2,11 +2,13 @@
 <br>
 <div class='container'>
     <div>
-        Number 1: <input type="text" value.bind="num1">
-        Number 2: <input type="text" value.bind="num2">
+        Number 1: <input class='num1' type="text" value.bind="num1">
+        Number 2: <input class='num2' type="text" value.bind="num2">
     </div>
+    <br>
     <div>
-        <button id='addBtn' click.trigger='add()' class='btn btn-primary'>Add</button>: ${sum}
+        <button id='addBtn' click.trigger='add()' class='btn btn-primary'>Add</button> 
+        <span id='sum'>${sum}</span>
     </div>
 </div>
 
